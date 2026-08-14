@@ -6,20 +6,16 @@ import { Transaction } from "../types/transaction"
 const chaseSapphirePreferred: Card = {
     id: "csp",
     displayName: "Chase Sapphire Preferred",
-    calculatePoints(transaction: Transaction): number {
-        if (isChaseTravel(transaction)) {
-            return 5 * (transaction.amountCents / 100);
-        } else if (isDining(transaction) || isGas(transaction) || isVacationHome(transaction) ) {
-            return 3 * (transaction.amountCents / 100);
-        } else if (isTravel(transaction)) {
-            return 2 * (transaction.amountCents / 100);
-        }
-        return transaction.amountCents / 100;
+    getMultiplier(transaction: Transaction): number {
+        if (isChaseTravel(transaction)) return 5;
+        if (isDining(transaction) || isGas(transaction) || isVacationHome(transaction)) return 3;
+        if (isTravel(transaction)) return 2;
+        return 1;
     } 
 } 
 
 function isChaseTravel(transaction: Transaction): boolean {
-    return transaction.description.toLowerCase().includes("Chase Travel");
+    return transaction.description.toLowerCase().includes("chase travel");
 }
 
 function isDining(transaction: Transaction): boolean {
@@ -36,7 +32,7 @@ function isTravel(transaction: Transaction): boolean {
 }
 
 function isVacationHome(transaction: Transaction): boolean {
-    return transaction.description.toLowerCase().includes("AIRBNB");
+    return transaction.description.toLowerCase().includes("airbnb");
 }
 
 type ChaseCategory =
@@ -51,11 +47,12 @@ type ChaseCategory =
   | "Groceries"
   | "Health & wellness"
   | "Home"
-  | "Travel"
   | "Miscellaneous"
   | "Personal"
   | "Professional services"
   | "Shopping"
   | "Travel";
 
+// export type exports the declarations and not the value/object
+export { chaseSapphirePreferred };
 export type { ChaseCategory };
