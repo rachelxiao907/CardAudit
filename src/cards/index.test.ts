@@ -5,6 +5,7 @@ import { getCard } from "./index";
 // npm install -D tsx
 // node --import=tsx --test src/cards/index.test.ts
 // node --import=tsx --test "src/**/*.test.ts"
+    // add in package.json
 
 test("getCard returns CSP", () => {
     const card = getCard("csp");
