@@ -1,3 +1,7 @@
+/**
+ * Single lookup that turns a plain string id from a CLI flag or API request body into a actual Card object
+ */
+
 import { Card } from "../types/card";
 import { chaseSapphirePreferred } from "./chaseSapphirePreferred";
 
@@ -12,6 +16,9 @@ function getCard(id: string): Card {
     }
     return card;
 }
+
+
+// TESTING 
 
 // npx tsx src/cards/index.ts
 // console.log(getCard('csp'));
