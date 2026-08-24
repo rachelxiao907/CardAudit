@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import { equal, ok } from "node:assert/strict";
-import { parseChaseCsv } from "./chase";
+import { parseChaseCsv } from "./chaseParser";
 
 // npm install -D tsx
 // node --import=tsx --test src/parsers/chaseCsvParser.test.ts

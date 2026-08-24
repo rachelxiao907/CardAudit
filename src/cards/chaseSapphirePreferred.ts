@@ -53,6 +53,7 @@ type ChaseCategory =
   | "Shopping"
   | "Travel";
 
+// TODO: zod validation
 // const chaseCategories = [
 //     "Automotive", "Bills & utilities", "Education", "Entertainment",
 //     "Fees & adjustments", "Food & drink", "Gas", "Gifts & donations",

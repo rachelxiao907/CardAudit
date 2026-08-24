@@ -1,11 +1,12 @@
 import { Transaction } from "../types/transaction";
 import { z } from "zod";
 
+// TODO: zod validation
 const TransactionSchema = z.object({
     transactionDate: z.coerce.date(), // automatically cast raw data into Date and validates it
     description: z.string().min(1),
-    category: z.string().min(1),
-    type: z.string().min(1),
+    category: z.string().min(1), // TODO: ChaseCategory enum validation
+    type: z.string().min(1), // TODO: TransactionType enum validation
     amountCents: z.number().int(), // number() is a base validator and int() is a modifier
 });
 

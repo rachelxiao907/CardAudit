@@ -3,7 +3,7 @@ import { z } from "zod";
 
 type TransactionType = "Sale" | "Adjustment" | "Payment" | "Fee" | "Return";
 
-// To use for zod validation
+// TODO: zod validation
 // const TransactionTypeSchema = z.enum(["Sale", "Adjustment", "Payment", "Fee", "Return"]);
 // type TransactionType = z.infer<typeof TransactionTypeSchema>;
 
