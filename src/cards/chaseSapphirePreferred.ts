@@ -53,6 +53,14 @@ type ChaseCategory =
   | "Shopping"
   | "Travel";
 
+// const chaseCategories = [
+//     "Automotive", "Bills & utilities", "Education", "Entertainment",
+//     "Fees & adjustments", "Food & drink", "Gas", "Gifts & donations",
+//     "Groceries", "Health & wellness", "Home", "Miscellaneous",
+//     "Personal", "Professional services", "Shopping", "Travel",
+// ] as const; // `as const` is essential — without it, TS widens this to string[]
+// type ChaseCategory = (typeof chaseCategories)[number];
+
 // export type exports the declarations and not the value/object
 export { chaseSapphirePreferred };
 export type { ChaseCategory };

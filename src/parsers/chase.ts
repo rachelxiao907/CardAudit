@@ -1,4 +1,13 @@
 import { Transaction } from "../types/transaction";
+import { z } from "zod";
+
+const TransactionSchema = z.object({
+    transactionDate: z.coerce.date(), // automatically cast raw data into Date and validates it
+    description: z.string().min(1),
+    category: z.string().min(1),
+    type: z.string().min(1),
+    amountCents: z.number().int(), // number() is a base validator and int() is a modifier
+});
 
 function parseChaseCsv(csvContent: string): Transaction[] {
     const lines = csvContent.split("\n");
